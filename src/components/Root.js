@@ -4,7 +4,7 @@ import List from './List/List';
 export default class Root extends Component {
 
   static propTypes = {
-    items: React.PropTypes.object.isRequired
+    items: React.PropTypes.array
   };
 
   static defaultProps = {

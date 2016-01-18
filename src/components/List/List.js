@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-const ListItem = ({ label }) => <div>{label}</div>;
+const ListItem = ({ label }, i) => <div key={i}>{label}</div>;
 
 export default class List extends Component {
 
   static propTypes = {
-    items: React.PropTypes.object.isRequired
+    items: React.PropTypes.array
   };
 
   static defaultProps = {
@@ -21,8 +21,9 @@ export default class List extends Component {
     const { items } = this.props;
     return (
       <div>
-        { items.map(item => <ListItem label={item.label} />) }
+        { items.map(ListItem) }
       </div>
     );
   }
+
 }
